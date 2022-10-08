@@ -1,4 +1,4 @@
-import * as React from 'react';
+// import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -15,11 +15,16 @@ import ListItemText from '@mui/material/ListItemText';
 // import MailIcon from '@mui/icons-material/Mail';
 import { pagedata } from '../Services/Pagedata';
 import { useNavigate } from 'react-router-dom';
+import * as React from 'react';
+import Badge from '@mui/material/Badge';
+import { useContext } from 'react';
+import { CartContext } from '../App';
 
-const drawerWidth = 240;
+const drawerWidth = 210;
 
 export default function Sidenavbar() {
     const navigate = useNavigate();
+    const [state, dispatch] = useContext(CartContext);
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
@@ -43,11 +48,14 @@ export default function Sidenavbar() {
                 <List>
                     {pagedata.map((page, index) => (
                         <ListItem key={page.id} disablePadding>
-                            <ListItemButton>
-                                <ListItemIcon style={{ color: "white" }}>
+                            <ListItemButton onClick={() => navigate(page.route)}>
+                                {page.label === "Cart1" ? (<Badge badgeContent={state.cartlist.length} color="secondary" showZero><ListItemIcon style={{ color: "white" }}>
                                     {page.icon}
-                                </ListItemIcon>
-                                <ListItemText primary={page.label} onClick={() => navigate(page.route)} />
+                                </ListItemIcon></Badge>) : (<ListItemIcon style={{ color: "white" }}>
+                                    {page.icon}
+                                </ListItemIcon>)}
+
+                                <ListItemText primary={page.label} />
                             </ListItemButton>
                         </ListItem>
                     ))}

@@ -48,8 +48,8 @@ export default function Productcard(props) {
     }
     return (
         <><Grid container direction={"row"} spacing={3}>
-            {props.list?.map((item, index) => {
-                item.stock = 0; item.brand = 0;
+            {props?.list?.map((item, index) => {
+                item.stock = 0; item.brand = 0; item.dicountpercentage = 0;
                 return (
                     <Grid item xs={4} sm={4} key={item.id}><Box sx={{ maxWidth: 500, bgcolor: 'background.paper', border: "2px solid black", borderRadius: "2%", padding: "4px" }}>
 
