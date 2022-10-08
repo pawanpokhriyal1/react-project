@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
+.Note-title {
+  margin-top: "4px";
+  margin-right: "4px";
+  font-size: "32px";
+  color: white;
+  width: 100%;
+  height: 5vh;
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+}
+.Text-area {
+  color: black;
+  font-weight: bold;
+  width: 100%;
+  height: 25vh;
+
+  border-radius: 8px;
+  border: solid 1px #eee;
+  padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.row.libray {
+  border: 2px solid black;
+  margin: 8px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.newlibrary {
+  background-color: white;
+  border: 2px solid black;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.show-body {
+  display: block;
+}
+.hide-body {
+  display: none;
+}
+.show-body-1 {
   display: flex;
+}
+
+.app-title {
+  margin-top: "8px";
+  margin-right: "8px";
+  font-size: "2.5rem";
+  color: black;
+  font-weight: 600;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  border: "2px solid black";
+  padding: "16px";
+}
+.title-box {
+  margin-top: "8px";
+  margin-right: "8px";
+  font-size: "18px";
+
+  padding: "16px";
+}
+.app-box {
+  background-color: rgb(13 110 253 / 25%);
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.card-box {
+  padding: "16px";
+  border: 2px solid black !important;
+  border-radius: 8px;
 }
 
-.App-link {
-  color: #61dafb;
+.list-box:hover .button-box {
+  display: flex !important;
+  transition-delay: 2s;
+}
+.grid-box:hover .button-box-1 {
+  display: block !important;
+  transition-delay: 2s;
+}
+.button-box {
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button-box-1 {
+  display: none;
+}
+
+body {
+  /* background-color: darkgrey; */
+}
+.notecard-title {
+  font-size: 32px;
+  font-weight: Bold;
+}
+* {
+  box-sizing: border-box;
 }
